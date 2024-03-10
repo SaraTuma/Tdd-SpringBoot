@@ -1,6 +1,6 @@
 package ao.com.tddspring.api.resources;
 
-import ao.com.tddspring.api.domain.User;
+import ao.com.tddspring.api.domain.UserModel;
 import ao.com.tddspring.api.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,12 @@ public class UserResource {
     @Autowired
     private UserService service;
     @GetMapping(value = "/{id}")
-    public ResponseEntity<User> findById(@PathVariable Integer id){
+    public ResponseEntity<UserModel> findById(@PathVariable Integer id){
         return  ResponseEntity.ok().body(service.findById(id));
+    }
+
+    @GetMapping
+    public String teste(){
+        return  service.teste();
     }
 }

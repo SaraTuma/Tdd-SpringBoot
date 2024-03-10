@@ -1,9 +1,10 @@
 package ao.com.tddspring.api.services;
 
-import ao.com.tddspring.api.domain.User;
+import ao.com.tddspring.api.domain.UserModel;
 
 public interface UserService {
     
-    User findById(Integer id);
+    UserModel findById(Integer id);
+    String teste();
     
 }
